@@ -7,11 +7,14 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 // Firebase Authentication provider
 import { provideAuth, getAuth } from '@angular/fire/auth';
 
-// Firebase Firestore provider (essential for FriendlyChat)
+// Firebase Firestore provider
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
-// Firebase Storage provider (if your chat app handles images)
+// Firebase Storage provider
 import { provideStorage, getStorage } from '@angular/fire/storage';
+
+// Firebase Messaging provider (NEW!)
+import { provideMessaging, getMessaging } from '@angular/fire/messaging';
 
 import { routes } from './app.routes';
 import { environment } from '../environments/environment';
@@ -21,9 +24,9 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    // ADD THESE LINES FOR FIRESTORE AND STORAGE
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
+    provideMessaging(() => getMessaging()), // <--- This is the new line in providers
   ]
 };
 
