@@ -1,0 +1,26 @@
+// 1. Ensure you import 'importProvidersFrom' from @angular/core
+import { ApplicationConfig, importProvidersFrom } from '@angular/core'; 
+import { provideRouter } from '@angular/router';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+// Make sure you import the specific Firebase providers you need, e.g.,
+import { provideAuth, getAuth } from '@angular/fire/auth'; 
+import { provideFirestore, getFirestore } from '@angular/fire/firestore'; 
+
+import { routes } from './app.routes';
+import { environment } from '../environments/environment';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideRouter(routes),
+    // --- FIX IS HERE ---
+    // Use importProvidersFrom to correctly include the AngularFire providers
+    importProvidersFrom(
+      provideFirebaseApp(() => initializeApp(environment.firebase)),
+      provideAuth(() => getAuth()),           // Example: providing Auth
+      provideFirestore(() => getFirestore()), // Example: providing Firestore
+      // Add other providers like provideStorage, provideFunctions, etc.
+    ),
+  ]
+};
+
+
