@@ -1,12 +1,11 @@
 export const environment = {
   firebase: {
-    apiKey: 'API_KEY',
-    authDomain: 'PROJECT_ID.firebaseapp.com',
-    databaseURL: 'https://PROJECT_ID.firebaseio.com',
-    projectId: 'PROJECT_ID',
-    storageBucket: 'PROJECT_ID.appspot.com',
-    messagingSenderId: 'SENDER_ID',
-    appId: 'APP_ID',
-    measurementId: 'G-MEASUREMENT_ID',
+apiKey: "AIzaSyAXbvbfGD5UXUeIx8SJPTkSjeXcTVKMALw",
+  authDomain: "sage-nucleus-427103-s9-5b85c.firebaseapp.com",
+  projectId: "sage-nucleus-427103-s9-5b85c",
+  storageBucket: "sage-nucleus-427103-s9-5b85c.firebasestorage.app",
+  messagingSenderId: "1043538624599",
+  appId: "1:1043538624599:web:35de92a00e54b6e5196312",
+  measurementId: "G-SLN6J8EDBZ"
   },
 };
